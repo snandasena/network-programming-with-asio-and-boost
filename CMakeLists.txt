@@ -6,6 +6,9 @@ set(THREADS_PREFER_PTHREAD_FLAG ON)
 find_package(Threads REQUIRED)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14 -I ${CMAKE_CURRENT_SOURCE_DIR}/asio-1.18.0/include")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14 -I ${CMAKE_CURRENT_SOURCE_DIR}/netcommon")
 
-add_executable(asio_samples main.cpp)
+
+#add_executable(asio_samples main.cpp)
+add_executable(asio_samples netclient/SimpleClient.cpp)
 target_link_libraries(asio_samples Threads::Threads)
